@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    
+   
+</head>
+<style>
+  body{
+
+      background-image: url(images/bg6.jpg);
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      
+
+  }
+  img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+    @keyframes textGradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* Apply the gradient animation to the text */
+    h1 {
+      font-family: "Arial Black", sans-serif;
+      font-size: 60%;
+      font-weight: bold;
+      background: linear-gradient(to right, blue,  yellow);
+      background-size: 200% 200%;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: textGradient 3s linear infinite;
+    }
+    .custom-image-size{
+      width: 100%;
+      height: 200px;
+    }
+    .border-gradient {
+    border: 5px solid;
+    border-image: linear-gradient(to right, blue, red);
+    border-image-slice: 1;
+    
+  }
+  footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+#about{
+      padding: 80px 0;
+      color: #000000;
+    }
+    .row{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .about-col-1{
+      flex-basis: 35%;
+    }
+    .about-col-1 img{
+      width: 100%;
+      border-radius: 30px;
+
+    }
+    .about-col-2{
+      flex-basis: 60%;
+      
+    }
+    .sub-title{
+      font-size: 60px;
+      font-weight: 600;
+      color: rgb(6, 176, 255);
+    }
+    .tab-titles{
+      display: flex;
+      margin: 20px 0 40px;
+    }
+    .tab-links{
+      margin-right: 50px;
+      font-size: 18px;
+      font-weight: 500;
+      cursor: pointer;
+      position: relative;
+    }
+    .tab-links::after{
+      content: '';
+      width: 0;
+      height: 3px;
+      background: #eb1414;
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      transition: 1s;
+    }
+    .tab-links.active-link::after{
+      width: 50%;
+    }
+    .tab-contents ul li{
+      list-style: none;
+      margin: 10px 0;
+    }
+    .tab-contents ul li span{
+      color: rgb(46, 68, 233);
+      font-size: 14px;
+    }
+    .tab-contents{
+      display: none;
+    }
+    .tab-contents.active-tab{
+      display: block;
+    }
+
+    /* Apply the animation to the image */
+.animated-image {
+    border: 5px solid transparent; /* Initial border style */
+    animation: border-animation 4s infinite linear;
+}
+
+/* Keyframes for the border animation */
+@keyframes border-animation {
+    0% {
+        border-color: #33c2ff; /* Initial border color */
+    }
+    25% {
+        border-color: #0544ff; /* Midway border color */
+    }
+    50% {
+        border-color: #ffffff; /* Back to initial border color */
+    }
+    75% {
+        border-color: darkcyan; /* Midway border color */
+    }
+    100% {
+        border-color: #000000; /* Final border color */
+    }
+}
+
+.animated-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1);
+      transition: transform 0.5s ease-in-out;
+    }
+
+    /* Animation on hover */
+    .animated-image:hover {
+      transform: scale(1.2);
+    }
+    h2{
+      font-size: 100%;
+      text-decoration: underline;
+      font-style: italic;
+    }
+    .typing-container {
+      font-size: 54px;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid burlywood;
+      padding-right: 8px;
+      animation: typing 8s steps(40) infinite;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+    @media (max-width: 767.98px) {
+      .text-md-start {
+        text-align: center;
+      }
+    }
+    .scroll-animation {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        /* Apply the animation when the element is in the viewport */
+        .scroll-animation.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .custom-border {
+      border: 2px solid #333; /* Adjust width and color as needed */
+      padding: 20px; /* Optional: Add padding to the container */
+    }
+</style>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+    <img src="images/Screenshot_2023-11-11_160845-removebg-preview.png" style="width:6%; border-radius: 40%;" class="navbar-brand"> </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#achievements">Achievements</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#background">Hobbies</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Family">Family</a>
+            </li>
+            <li class="nav-item" data-toggle="modal" data-target="#myModal">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item" data-toggle="modal" data-target="#myModal">
+                <a class="nav-link" href="#contacts">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+<section id="intro" class="scroll-animation">
+  <div class="container-xxl">
+    <div class="row g-4 justify-content-center align-items-center">
+  
+      <!-- Column 1: Name, Course, Welcome Message, and Button -->
+      <div class="col-md-12 col-lg-4 text-center text-md-start mb-3">
+        <h1>
+          <div id="name-container" class="display-4 text-start typing-container"></div>
+          <div id="course-container" class="display-5 text-start typing-container"></div>
+        </h1>
+        
+        <b>
+          <p class="lead my-6 text-muted-4" style="text-decoration: solid; color: whitesmoke;">Welcome to my Website.Click if you are interested on me</p>
+        </b>
+        <a href="https://www.facebook.com/davebuco07/"><h2 class="btn bg-success-subtle mt-2">Visit Me Here!
+        </h2></a>
+
+      </div>
+  
+      <!-- Column 2: Photo -->
+      <div class="col-md-12 col-lg-4 text-center my-3">
+        <img src="images/orca-image--1288628287-removebg-preview (1).png" style="max-width: 500px;" class="align-items-lg-center" alt="photo" title="Me">
+      </div>
+  
+      <!-- Column 3: Social Media Icons -->
+      <div class="col-md-12 col-lg-4 text-end">
+        <div class="social-media-icons text-end" style="display: flex; flex-direction: column; align-items: flex-end;">
+          <p class="text-info">COME AND VISIT ME HERE!</p>
+          <a href="https://www.facebook.com/login.php/" target="_blank"><h2 class="text-info">FACEBOOK
+              <img src="images/facebook_logos_PNG19757.png" alt="Facebook" width="72" height="62">
+            </h2></a>
+          <a href="https://www.tiktok.com/" target="_blank"><H2 class="text-info">TIKTOK
+              <img src="images/OIP__3_-removebg-preview.png" alt="Tiktok" width="72" height="62">
+          </h2></a>
+          <a href="https://www.instagram.com/yourinstagramprofile/" target="_blank"><H2 class="text-info">INSTAGRAM
+              <img src="images/OIP__2_-removebg-preview.png" alt="Instagram" width="72" height="62">
+          </h2></a>
+          <a href="https://www.twitter.com/yourtwitterprofile/" target="_blank"><H2 class="text-info">TWITTER
+            <img src="images/md_twitter-removebg-preview.png" alt="Twitter" width="72" height="62">
+        </h2></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="about" class="bg-dark-subtle scroll-animation">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img class="animated-image" src="images/68.jpg" title="me" class="animated-image" alt="Your Image">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p style="text-align: justify;">"Hello, I'm Christian Dave O. Buco, a passionate and dedicated individual. I thrive on challenges and am driven by a genuine curiosity to learn and grow. I bring a unique blend of creativity and analytical thinking to every project I undertake. My journey as a BSIT student has equipped me with valuable experience in computer software and hardware, where I have successfullyfinished my first and second year in college. Beyond my studying pursuits, I enjoy coding and specially my sports which is basketball and believe in the power of collaboration and continuous improvement. I am excited about the prospect of contributing my skills and enthusiasm to make a positive impact wherever I go."</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <h3>CODING</h3>
+                            <img src="images/js.jpg" title="javascript" style="width: 5%;">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 40%;">
+                                    40%
+                                </div>
+                            </div>
+                            <h3>Php</h3>
+                            <img src="images/PHP.png" title="php" style="width: 7%;">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 30%;">
+                                    30%
+                                </div>
+                            </div>
+                            <h3>Html</h3>
+                            <img src="images/htmll.jpg" title="html" style="width: 6%;">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 70%;">
+                                    70%
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            Experience in:
+                            <li><span>School</span><br>Creating an Own Website</li>
+                            <li><span>Life</span><br>Cleaning A system Unit</li>
+                            <li><span>Work</span><br>None</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            Education in:
+                            <li><span>Elementary</span><br>Mapaniqui Elementary School (2008-2015)</li>
+                            <li><span>Junior and Senior High School</span><br>Mapaniqui High School/Saint John School (2015-2021)</li>
+                            <li><span>College</span><br>B.A.S.C. (2021-PRESENT)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+      </section>
+
+      <section id="achievements" class="scroll-animation">
+
+        <div class="container">
+          <center><div class="container-fluid mt-2 p-3 text-dark bg-secondary " style="font-size: 145%; text-decoration: wavy;">My achievements</div></center>
+          <div class="container mt-5">
+            <div class="row">
+                <!-- Column 1 -->
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <i class="fas fa-medal fa-3x mb-3 blue-icon"></i>
+                        <h4 class="text-bg-secondary">Honor</h4>
+                        <p class="text-dark ">
+                          <ul>
+                            <li class="text-dark text-start">
+                              Top 1 student from grade 1-6
+                            </li>
+                            <li class="text-dark text-start">
+                              Consistent Honor student from grade 7-12
+                            </li>
+                            <li class="text-dark text-start">
+                              Dean's Lister on first year college
+                            </li>
+                          </ul>
+                        </p>
+                    </div>
+                </div>
+        
+                <!-- Column 2 -->
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <i class="fas fa-trophy fa-3x mb-3 blue-icon"></i>
+                        <h4 class="text-bg-secondary">Competition</h4>
+                        <p class="text-dark">
+                          <ul>
+                            <li class="text-dark text-start">
+                              Math Quiz Bee 4th placer-grade4 <br>
+                              Math Quiz Bee 5th placer-grade5
+                            </li>
+                            <li class="text-dark text-start">
+                              Chess 4th placer grade4
+                            </li>
+                            <li class="text-dark text-start">
+                              Math Trail competition 2nd placer-grade7
+                            </li>
+                          </ul>
+                        </p>
+                    </div>
+                </div>
+        
+                <!-- Column 3 -->
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <i class="fas fa-certificate fa-3x mb-3 blue-icon"></i>
+                        <h4 class="text-bg-secondary">Leadership</h4>
+                        <p class="text-dark text-start">
+                          <ul>
+                            <li class="text-dark text-start">
+                              SPG President Officer in Elementary
+                            </li>
+                            <li class="text-dark text-start">Grade-7 Representative <br>Grade-8 Representative
+                            </li>
+                          </ul>
+                </div>
+            </div>
+        </div>
+              
+              
+        </div>    
+      </section>
+
+          <h2 class="bg-success text-center p-2 mt-3 text-light text-decoration-line-through"> Background</h2>
+          <section id="background" class="mt-3 ">
+<div class="container-lg">
+    <div class="text-center">
+        <p class="lead text-center text-light text-bg-warning">These are my hobbies</p>
+    </div>
+    <div class="container">
+      <div class="row">
+        
+        <div class="col-md-4">
+
+          <div class="card border-gradient">
+            <img src="images/mobile.jpg" class="card-img-top custom-image-size" alt="Card Image" title="mobile games">
+            <div class="card-body">
+              <CENTER><h5 class="card-title text-bg-warning text-danger">Playing Mobile Games</h5></CENTER>
+              <CENTER><p class="card-text text-xl-start text-success">One of my hobby is playing mobile games, it is because it makes me happy and it can release my stress.My favorite mobile games are Genshin Impact, Mobile Legends and COC.</p></CENTER>
+              <center><a href="https://www.pockettactics.com/best-mobile-games" class="btn btn-success">Click to see mobile games</a></center>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card border-gradient">
+            <img src="images/download-anime-episodes-and-shows.jpg" class="card-img-top custom-image-size" alt="Card Image" title="anime">
+            <div class="card-body">
+              <center><h5 class="card-title text-bg-warning text-danger">Watching Anime</h5></center>
+              <p class="card-text text-xl-start text-success">One of my hobby is watching anime series or movies, it is because it makes me enjoy  while watching and can make me productive after watching.My favorite anime are AOT, Black clover, Jujutsu and more..</p>
+              <center><a href="https://animepahe.ac/animepahe.com" class="btn btn-success">Click to Watch Anime</a></center>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card border-gradient">
+            <img src="images/eat.jpg" class="card-img-top custom-image-size" alt="Card Image" title="eating">
+            <div class="card-body">
+              <center><h5 class="card-title text-bg-warning text-danger">Eating</h5></center>
+              <p class="card-text text-xl-start text-success">One of my hobby is Eating, it is because it makes me feel better and stronger.My favorite foods to eat are my mom dishes and specially sisig.</p>
+              <center><a href="https://www.eatingwell.com/" class="btn btn-success ">Click To see foods</a></center>
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <center>
+        <p class="mt-3" style="font-size: 40px; font-style: oblique;">click to view my sports</p><div class="container mt-1">
+        <!-- Modal 1 -->
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#imageModal1">
+          Basketball
+        </button>
+    
+        <!-- Modal 2 -->
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#imageModal2">
+          Chess
+        </button>
+    
+        <!-- Modal 3 -->
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#imageModal3">
+          Volleyball
+        </button>
+      </center>
+        <!-- Modal 1 -->
+        <div class="modal fade" id="imageModal1" tabindex="-1" aria-labelledby="imageModalLabel1" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="imageModalLabel1">Basketball</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <!-- Image goes here -->
+                <img src="images/basketball.jpg" class="img-fluid" alt="Modal Image 1">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Modal 2 -->
+        <div class="modal fade" id="imageModal2" tabindex="-1" aria-labelledby="imageModalLabel2" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="imageModalLabel2">Chess</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <!-- Image goes here -->
+                <img src="images/chess.jpg" class="img-fluid" alt="Modal Image 2">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Modal 3 -->
+        <div class="modal fade" id="imageModal3" tabindex="-1" aria-labelledby="imageModalLabel3" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="imageModalLabel3">Volleyball</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <!-- Image goes here -->
+                <img src="images/vball.jpg" class="img-fluid" alt="Modal Image 3">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  
+        
+  </section>
+    <section id="Family" class="mt-3 scroll-animation">
+      <div class="container-fluid text-center my-2 bg-warning">
+        <div class="row align-items-start">
+          <div class="col p-4">
+            My Family Members
+          </div>
+      </div>
+            </div>
+        </div>
+      </div>
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed my-1"  type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              My Parents
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse bg-success" data-bs-parent="#accordionFlushExample">
+            <ul>
+                <li>Adelaida O. Buco</li>
+                <li>Edward A. Buco</li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed my-1" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              My Siblings
+            </button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse collapse bg-success" data-bs-parent="#accordionFlushExample">
+            <ul>
+                <li>Kyla O. Buco</li>
+                <li>Julia O. Buco</li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed my-1" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+              Grandparents
+            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse bg-success" data-bs-parent="#accordionFlushExample">
+            <ul>
+                <li>Francia A. Buco</li>
+                <li>Abelardo C. Buco</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="mt-3 scroll-animation">
+      <div class="container">
+        <center><div class="container-fluid mt-2 p-3 text-dark " style="font-size: 205%; text-decoration: wavy;"><B>SERVICES</B></div></center>
+        <div class="container mt-5">
+          <div class="row m-2">
+              <!-- Column 1 -->
+              <div class="col-md-3 custom-border mx-3">
+                  <div class="text-center">
+                      <i class="fas fa-tools fa-3x mb-3 blue-icon"></i>
+                      <h4 >Computer Maintenance</h4>
+                      <p style="text-align: center;">Computer maintenance is the practice of keeping computers in a good state of repair</p>
+                  </div>
+              </div>
+      
+              <!-- Column 2 -->
+              <div class="col-md-3 custom-border mx-3">
+                  <div class="text-center">
+                      <i class="fas fa-brush fa-3x mb-3 blue-icon"></i>
+                      <h4 >Cleaning <br> Service</h4>
+                      <p style="text-align: center;">Cleaning Services for the computer parts specially for the system unit</p>
+                  </div>
+              </div>
+      
+              <!-- Column 3 -->
+              <div class="col-md-3 custom-border mx-3">
+                  <div class="text-center">
+                      <i class="fas fa-globe fa-3x mb-3 blue-icon"></i>
+                      <h4>Web <br>Designer</h4>
+                      <p style="text-align: center;">web designer creates the layout and design of a website. In simple terms, a website designer makes a site look good.</p>
+              </div>
+          </div>
+      </div>
+      <div class="row m-2">
+        <!-- Column 4 -->
+        <div class="col-md-3 mt-5 custom-border mx-3">
+            <div class="text-center">
+                <i class="fas fa-database fa-3x mb-3 blue-icon"></i>
+                <h4 >Back-end</h4>
+                <p style="text-align: center;">The Back end developer job is to understand the goals of the website and come up with effective solutions</p>
+            </div>
+        </div>
+
+        <!-- Column 5 -->
+        <div class="col-md-3 mt-5 custom-border mx-3">
+            <div class="text-center">
+                <i class="fas fa-image fa-3x mb-3 blue-icon"></i>
+                <h4 >Photo Editor</h4>
+                <p style="text-align: center;">Photo editorsare creative media professionals who handle the post-production of photographs before they're published in print or digitally</p>
+            </div>
+        </div>
+
+        <!-- Column 6 -->
+        <div class="col-md-3 mt-5 custom-border mx-3">
+            <div class="text-center">
+                <i class="fas fa-plus-minus fa-3x mb-3 blue-icon"></i>
+                <h4>Data Analyst</h4>
+                <p style="text-align: center;">A data analyst collects, cleans, and interprets data sets in order to answer a question or solve a problem</p>
+        </div>
+    </div>
+</div>
+        </div>
+      </div>
+    </section>
+    
+
+    <section id="contacts" class="bg-secondary-subtle mb-1 scroll-animation">
+      <div class="bg-dark p-3 text-center mt-3 text-light">MY CONTACTS</div>
+      <div class="container mt-5">
+        <div class="row">
+          <!-- Left Column - Contact Information -->
+          <div class="col-md-6">
+            <h2>Contact Information</h2>
+            <p><strong>Email:</strong> christiandavebuco.basc@gmail.com</p>
+            <p><strong>Phone:</strong> +69452546201</p>
+            <p><strong>Location:</strong> 280 ST. CENTRO 2, MAPANIQUI, CANDABA, PAMPANGA</p>
+          </div>
+    
+          <!-- Right Column - Message Form -->
+          <div class="col-md-6">
+            <h2>Send a Message</h2>
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+              </div>
+    
+              <div class="mb-3">
+                <label for="email" class="form-label">Your Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="name@example.com">
+              </div>
+    
+              <div class="mb-3">
+                <label for="message" class="form-label">Your Message</label>
+                <textarea class="form-control" id="message" rows="4" placeholder="Type your message here"></textarea>
+              </div>
+    
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  
+      <footer>
+        <div class="container mt-6">
+          <h1 style="font-size: larger;">"If you do tomorrow what you did today , you will get tomorrow what you got today"</h1>
+            <p> Thank You for Visiting my Website.</p>
+        </div>
+    </footer>
+      
+    <script>
+      // Function to handle the intersection callback
+      function handleIntersection(entries, observer) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      }
+    
+      // Create an intersection observer
+      const observer = new IntersectionObserver(handleIntersection, { threshold: 0.5 });
+    
+      // Target all elements with the class 'scroll-animation'
+      const animatedElements = document.querySelectorAll('.scroll-animation');
+    
+      // Observe each animated element
+      animatedElements.forEach((element) => {
+        observer.observe(element);
+      });
+    </script>
+    
+    <script>
+
+        var tablinks = document.getElementsByClassName("tab-links"); 
+        var tabcontents = document.getElementsByClassName("tab-contents"); 
+        
+        function opentab(tabname){ 
+          for(tablink of tablinks){ 
+            tablink.classList.remove("active-link"); 
+        }
+        for(tabcontent of tabcontents){ 
+          tabcontent.classList.remove("active-tab"); 
+        } 
+        event.currentTarget.classList.add("active-link"); 
+        document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+ <script>
+  // JavaScript code to dynamically change the content if needed
+  // For example, you can use AJAX to fetch data from a server and update the content
+  // For simplicity, I'll just show the typing effect without dynamic content change
+  // If you have dynamic content, you can replace the textToType variables with your dynamic content.
+
+  const nameElement = document.getElementById('name-container');
+  const courseElement = document.getElementById('course-container');
+
+  const nameToType = 'HI IM DAVE';
+  const courseToType = 'from BSIT 3A';
+
+  function typeText(element, text) {
+    let index = 0;
+    function type() {
+      element.textContent += text[index];
+      index++;
+      if (index < text.length) {
+        setTimeout(type, 100); // Adjust the typing speed (in milliseconds) by changing this value
+      }
+    }
+    type();
+  }
+
+  typeText(nameElement, nameToType);
+  typeText(courseElement, courseToType);
+</script>
+
+      <script src="js/bootstrap.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</body>
+
+</html>
